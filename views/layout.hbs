@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{title}}</title>
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<link rel="icon" sizes="16x16 32x32" href="/images/favicon.ico">
+	</head>
+	<body>
+		<header>
+			<div class="inner">
+				<img src="/images/logo-netshoes.png" class="logo" alt="Netshoes" />
+				<!--<div class="search-holder">
+					<input type="search" placeholder="Busca" />
+				</div>-->
+				<i class="cart-icon" total-in-bag="3" onClick="document.getElementById('cart').className += ' open'"></i>
+			</div>
+		</header>
+		<section class="content">{{{body}}}</section>
+		<section class="cart" id="cart">
+			<h2 class="cart__title">
+				<i class="cart-icon" total-in-bag="3"></i>
+				<span>Sacola</span>
+			</h2>
+			<div class="cart__list">
+				<div class="cart__list__item">
+					<div class="inner">
+						<div class="img" style="background-image: url('/images/test-cart-product-img.jpg')"></div>
+						<div class="info">
+							<div class="product-name">
+								<span>Camisa Nike Corinthians III 2014 s/nº Nike Corinthians III 2014 s/nº</span>
+								<i class="close">&times;</i>
+							</div>
+							<div class="description">
+								<div class="grey">GGG | Preto e branco<br/>Quantidade: 1</div>
+								<div class="price">R$ <span class="main-price">149</span>,90</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cart__list__item">
+					<div class="inner">
+						<div class="img" style="background-image: url('/images/test-cart-product-img.jpg')"></div>
+						<div class="info">
+							<div class="product-name">
+								<span>Camisa Nike Corinthians III 2014 s/nº Nike Corinthians III 2014 s/nº</span>
+								<i class="close">&times;</i>
+							</div>
+							<div class="description">
+								<div class="grey">GGG | Preto e branco<br/>Quantidade: 1</div>
+								<div class="price">R$ <span class="main-price">149</span>,90</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cart__list__item">
+					<div class="inner">
+						<div class="img" style="background-image: url('/images/test-cart-product-img.jpg')"></div>
+						<div class="info">
+							<div class="product-name">
+								<span>Camisa Nike Corinthians III 2014 s/nº Nike Corinthians III 2014 s/nº</span>
+								<i class="close">&times;</i>
+							</div>
+							<div class="description">
+								<div class="grey">GGG | Preto e branco<br/>Quantidade: 1</div>
+								<div class="price">R$ <span class="main-price">149</span>,90</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="cart__subtotal">
+				<div class="cart__subtotal__title">Subtotal</div>
+				<div class="align-right">
+					<div class="cart__subtotal__price">R$ <strong>379</strong>,90</div>
+					<div class="cart__subtotal__installments">ou em até 10 X R$ 37,97</div>
+				</div>
+			</div>
+			<a href="#" class="cart__checkout-btn">Comprar</a>
+		</section>
+	</body>
+</html>
