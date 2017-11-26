@@ -30,6 +30,7 @@
 				<h2 class="cart__title">
 					<i class="cart-icon" total-in-bag="3"></i>
 					<span>Sacola</span>
+					<i class="close" @click="toggleCart">&times;</i>
 				</h2>
 				<cart-list></cart-list>
 				<div class="cart__subtotal">
