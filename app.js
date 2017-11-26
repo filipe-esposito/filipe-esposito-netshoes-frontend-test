@@ -6,9 +6,30 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
 
-var index = require('./routes/index');
-
 var app = express();
+
+// Vue
+var expressVue = require('express-vue');
+
+const vueOptions = {
+	rootPath: path.join(__dirname, './components'),
+	vue: {
+		head: {
+			meta: [{
+					script: 'https://unpkg.com/vue@2.4.2/dist/vue.js'
+				}
+			]
+		}
+	},
+	layout: {
+		start : '<div id="app">',
+		end   : '</div>'
+	}
+};
+const expressVueMiddleware = expressVue.init(vueOptions);
+app.use(expressVueMiddleware);
+
+var index = require('./routes/index');
 
 // Handlebars helpers
 var Handlebars = require('hbs')
