@@ -17,13 +17,16 @@
 					<!--<div class="search-holder">
 						<input type="search" placeholder="Busca" />
 					</div>-->
-					<i class="cart-icon" total-in-bag="3" onClick="document.getElementById('cart').className += ' open'"></i>
+					<i class="cart-icon" total-in-bag="3" @click="toggleCart"></i>
 				</div>
 			</header>
 			<section class="content">
 				<product-list :product-list="product_list"></product-list>
 			</section>
-			<section class="cart" id="cart">
+			<transition name="fade">
+				<div v-if="cart_visible" class="overlay" @click="toggleCart"></div>
+			</transition>
+			<section :class="['cart', { 'open': cart_visible }]">
 				<h2 class="cart__title">
 					<i class="cart-icon" total-in-bag="3"></i>
 					<span>Sacola</span>
@@ -50,12 +53,18 @@
 		data() {
 			return {
 				title        : '',
-				product_list : []
+				product_list : [],
+				cart_visible : false
 			}
 		},
 		components: {
 			productList,
 			cartList
+		},
+		methods: {
+			toggleCart: function() {
+				this.cart_visible = !this.cart_visible
+			}
 		}
 	}
 </script>
