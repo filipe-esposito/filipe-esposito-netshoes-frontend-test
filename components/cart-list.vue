@@ -37,9 +37,14 @@
 		},
 		methods: {
 			removeProduct: function(index) {
-				if( confirm('Você tem certeza de que deseja remover este produto da sacola?') ) {
-					this.cartList.splice(index, 1)
-				}
+				growl.defaults.type = 'success'
+				growl.defaults.text = ''
+				growl.defaults.fadeAway = true
+				growl.defaults.fadeAwayTimeout = 4000
+				growl.defaults.closeOnClick = true
+
+				this.cartList.splice(index, 1)
+				growl.success('Produto removido com sucesso!')
 			}
 		}
 	}

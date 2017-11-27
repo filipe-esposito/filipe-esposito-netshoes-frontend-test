@@ -7,6 +7,7 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 			<meta name="apple-mobile-web-app-capable" content="yes">
 			<link rel='stylesheet' href='/stylesheets/style.css' />
+			<link rel="stylesheet" href="https://unpkg.com/growl-alert/dist/growl-alert.css" />
 			<link rel="shortcut icon" href="/images/favicon.ico">
 			<link rel="icon" sizes="16x16 32x32" href="/images/favicon.ico">
 		</head>
@@ -14,9 +15,6 @@
 			<header>
 				<div class="inner">
 					<img src="/images/logo-netshoes.png" class="logo" alt="Netshoes" />
-					<!--<div class="search-holder">
-						<input type="search" placeholder="Busca" />
-					</div>-->
 					<i class="cart-icon" :total-in-bag="cart_list.length" @click="toggleCart"></i>
 				</div>
 			</header>
@@ -59,6 +57,18 @@
 				cart_list    : [],
 				cart_visible : false
 			}
+		},
+		mounted() {
+			var el = document.createElement('script')
+			el.setAttribute('type', 'text/javascript')
+			el.setAttribute('src', 'https://unpkg.com/growl-alert@1.0.1/dist/growl-alert.js')
+			document.getElementsByTagName('head')[0].appendChild(el)
+
+			/* growl.defaults.type = 'success' */
+			/* growl.defaults.text = '' */
+			/* growl.defaults.fadeAway = true */
+			/* growl.defaults.fadeAwayTimeout = 4000 */
+			/* growl.defaults.closeOnClick = true */
 		},
 		computed: {
 			subtotal: function() {

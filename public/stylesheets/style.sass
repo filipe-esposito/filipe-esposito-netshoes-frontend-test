@@ -28,6 +28,10 @@ body
 header
 	background-color: #1F1F1F
 	height: 70px
+	left: 0
+	position: fixed
+	top: 0
+	width: 100%
 
 	.inner
 		align-items: center
@@ -50,7 +54,7 @@ header
 
 .content
 	padding: 32px 16px
-	margin: 0 auto
+	margin: 70px auto 0
 	max-width: 730px
 
 	@media only screen and (max-width: $breakpoint-mobile)
@@ -147,7 +151,7 @@ header
 					line-height: 30px
 					height: 30px
 					margin-top: 8px
-					padding: 0 16px
+					padding: 0 20px
 					text-transform: uppercase
 					transition: background-color .2s ease
 
@@ -189,7 +193,7 @@ header
 	position: fixed
 	top: 0
 	width: 100%
-	z-index: 9998
+	z-index: 9997
 
 	&.fade-enter-active,&.fade-leave-active
 		transition: opacity .4s ease
@@ -209,7 +213,7 @@ header
 	top: 0
 	transition: right .4s ease
 	width: 100%
-	z-index: 9999
+	z-index: 9998
 
 	@media only screen and (max-width: $breakpoint-mobile)
 		border-width: 0
@@ -277,6 +281,7 @@ header
 
 				.info
 					flex: 1
+					margin-top: -4px
 
 				.product-name
 					font-size: 14px
@@ -348,3 +353,47 @@ header
 		margin: 0 20px 20px
 		text-align: center
 		text-transform: uppercase
+
+#growl-container
+	top: 80px
+	z-index: 9999
+
+	.growl-alert
+
+		&.growl-alert--success
+			background-color: $netshoes-purple
+
+			.growl-alert__icon:after
+				transform: scaleX(-1) rotate(135deg) scale(.75)
+
+		&.growl-alert--warning
+			background-color: $netshoes-yellow
+
+			.growl-alert__icon
+				border-bottom-color: #131316
+
+				&:before
+					border-radius: 0
+					height: 15px
+					width: 6px
+				&:after
+					border-radius: 0
+					height: 7px
+					top: 36px
+					width: 6px
+
+		.growl-alert__text
+			font-size: 14px
+			text-shadow: 1px 1px 0 rgba(0, 0, 0, .2)
+
+		.growl-alert__close
+			filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, .2))
+			width: 16px
+			
+			&:before,
+			&:after
+				border-radius: 0px
+				height: 4px
+
+		.growl-alert__icon
+			margin-right: 10px

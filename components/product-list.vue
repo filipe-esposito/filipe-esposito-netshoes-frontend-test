@@ -74,9 +74,14 @@
 				let product_title = event.target.getAttribute('data-title')
 				let product_price = event.target.getAttribute('data-price')
 
+				growl.defaults.type = 'success'
+				growl.defaults.text = ''
+				growl.defaults.fadeAway = true
+				growl.defaults.fadeAwayTimeout = 4000
+				growl.defaults.closeOnClick = true
+
 				if( !product_size ) {
-					//REPLACE
-					alert('Escolha um tamanho para este produto.')
+					growl.warning('Escolha um tamanho para este produto.')
 					return
 				}
 				
@@ -84,8 +89,7 @@
 					let p = this.cartList[i]
 					if( (p.sku == product_sku) && (p.size == product_size) ) {
 						p.qty += parseInt(product_qty)
-						//REPLACE
-						alert('O produto foi adicionado com sucesso!')
+						growl.success('O produto foi adicionado com sucesso!')
 						return
 					}
 				}
@@ -98,8 +102,7 @@
 					title : product_title,
 					price : product_price
 				})
-				//REPLACE
-				alert('O produto foi adicionado com sucesso!')
+				growl.success('O produto foi adicionado com sucesso!')
 			}
 		}
 	}
