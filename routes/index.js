@@ -16,11 +16,6 @@ router.get('/', function(req, res, next) {
 		};
 		const vueOptions = {}
 		res.renderVue('index', data, vueOptions);
-
-		/* res.render('index', {
-			title        : 'Netshoes: Teste Frontend - Filipe Espósito',
-			product_list : product_data.products
-		}); */
 	})
 });
 
