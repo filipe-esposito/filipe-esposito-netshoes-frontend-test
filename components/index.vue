@@ -63,12 +63,6 @@
 			el.setAttribute('type', 'text/javascript')
 			el.setAttribute('src', 'https://unpkg.com/growl-alert@1.0.1/dist/growl-alert.js')
 			document.getElementsByTagName('head')[0].appendChild(el)
-
-			/* growl.defaults.type = 'success' */
-			/* growl.defaults.text = '' */
-			/* growl.defaults.fadeAway = true */
-			/* growl.defaults.fadeAwayTimeout = 4000 */
-			/* growl.defaults.closeOnClick = true */
 		},
 		computed: {
 			subtotal: function() {
