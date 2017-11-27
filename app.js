@@ -15,8 +15,9 @@ const vueOptions = {
 	rootPath: path.join(__dirname, './components'),
 	vue: {
 		head: {
-			meta: [{
-					script: 'https://unpkg.com/vue@2.4.2/dist/vue.js'
+			meta: [
+				{
+					script: 'https://unpkg.com/vue@2.4.2/dist/vue.js' 
 				}
 			]
 		}
@@ -30,22 +31,6 @@ const expressVueMiddleware = expressVue.init(vueOptions);
 app.use(expressVueMiddleware);
 
 var index = require('./routes/index');
-
-// Handlebars helpers
-var Handlebars = require('hbs')
-Handlebars.registerHelper('floor', function(value, options) {
-	return Math.floor(value)
-})
-Handlebars.registerHelper('only_cents', function(value, options) {
-	return ( value % Math.floor(value) ).toFixed(2) * 100
-})
-Handlebars.registerHelper('format_installments', function(value, installments) {
-	return (value/installments).toFixed(2).replace('.', ',')
-})
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
 
 app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('dev'));
