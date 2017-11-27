@@ -4,6 +4,7 @@ $breakpoint-tablet: 768px
 $breakpoint-mobile: 414px // iPhone 6S Plus
 
 $netshoes-yellow: #DFBD00
+$netshoes-purple: #593080
 $netshoes-grey: #999
 $main-color: #313135
 $cart-bgcolor: #202025
@@ -13,6 +14,7 @@ $cart-altcolor: #131316
 *:before,
 *:after
 	margin: 0
+	outline: none
 	padding: 0
 
 body
@@ -60,7 +62,7 @@ header
 		flex-wrap: wrap
 		justify-content: center
 
-		.product-item
+		&__item
 			box-sizing: border-box
 			margin-bottom: 60px
 			padding: 0 16px
@@ -83,39 +85,74 @@ header
 					margin-left: 0
 					margin-right: 0
 					width: 100%
+
+			&__info
+				margin-bottom: 16px
 			
-			.product-name
-				align-items: center;
-				color: #313135
-				display: flex;
-				height: 38px
-				justify-content: center;
-				margin-bottom: 8px
+				.product-name
+					align-items: center;
+					color: #313135
+					display: flex;
+					height: 38px
+					justify-content: center;
+					margin-bottom: 8px
+					
+					@media only screen and (max-width: $breakpoint-mobile)
+						height: auto
 				
-				@media only screen and (max-width: $breakpoint-mobile)
-					height: auto
+				hr
+					background-color: $netshoes-yellow
+					border: none
+					height: 2px
+					margin: 8px auto 0
+					width: 15px
+
+				.price
+					font-size: 12px
+
+					.main-price
+						font-size: 24px
+						font-weight: bold
+
+				.installments
+					color: $netshoes-grey
+					height: 19px
+					margin-top: -2px
+
+					.value
+						font-weight: bold
+
+			.add-to-cart
+
+				&__info
+					label
+						display: inline-block
+						font-size: 12px
+						margin-bottom: 6px
+						margin-right: 4px
+
+					select
+						border: 1px $netshoes-grey solid
+						cursor: pointer
+						font-size: 12px
 			
-			hr
-				background-color: $netshoes-yellow
-				border: none
-				height: 2px
-				margin: 8px auto 0
-				width: 15px
-
-			.price
-				font-size: 12px
-
-				.main-price
-					font-size: 24px
+				&__btn
+					background-color: $netshoes-purple
+					border: none
+					border-radius: 4px
+					color: white
+					cursor: pointer
+					font-size: 12px
 					font-weight: bold
+					line-height: 30px
+					height: 30px
+					margin-top: 8px
+					padding: 0 16px
+					text-transform: uppercase
+					transition: background-color .2s ease
 
-			.installments
-				color: $netshoes-grey
-				height: 19px
-				margin-top: -2px
-
-				.value
-					font-weight: bold
+					&:hover
+						background-color: darken($netshoes-purple, 10)
 
 .cart-icon
 	background-image: url('../images/cart.png')
@@ -207,6 +244,9 @@ header
 	
 	&__list
 		margin-bottom: 32px
+
+		&__is-empty
+			text-align: center
 
 		&__item
 			padding: 0 24px
